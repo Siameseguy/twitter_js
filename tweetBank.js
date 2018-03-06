@@ -11,6 +11,7 @@ function add (name, content) {
   }
 
   function find (properties) {
+    console.log(data)
     return _.cloneDeep(_.filter(data, properties));
   }
 
