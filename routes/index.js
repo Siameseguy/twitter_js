@@ -10,8 +10,13 @@ router.get('/', function(req, res) {
 router.get('/users/:name', function(req, res) {
   var name = req.params.name
   var tweets = tweetBank.find({ name: name })
-  console.log(name, 'name')
-  console.log(tweets)
+  res.render('index', { tweets: tweets })
+})
+
+router.get('/tweets/:id', function(req, res) {
+  var id = +req.params.id
+  console.log(id)
+  var tweets = tweetBank.find({ id: id })
   res.render('index', { tweets: tweets })
 })
 
